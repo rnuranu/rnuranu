@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/header.svg" width="100%" alt="Ranu - Full-Stack Developer" />
+  <img src="./assets/banner.svg" width="100%" alt="Ranu - Full-Stack Developer" />
 </div>
 
 <br/>
