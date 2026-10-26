@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" width="100%" height="220" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Border Glow Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Text Shimmer Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <!-- Tag Gradient -->
+    <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes floatParticle {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        50% { transform: translateY(-8px) translateX(6px); opacity: 0.8; }
+      }
+      @keyframes radarPulse {
+        0% { r: 4px; opacity: 1; }
+        100% { r: 11px; opacity: 0; }
+      }
+      @keyframes textShimmer {
+        0%, 100% { opacity: 0.95; }
+        50% { opacity: 0.8; }
+      }
+      @keyframes streamLine {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .particle-1 { animation: floatParticle 5s ease-in-out infinite; }
+      .particle-2 { animation: floatParticle 7s ease-in-out infinite 1.5s; }
+      .particle-3 { animation: floatParticle 6s ease-in-out infinite 3s; }
+      .radar-ring { animation: radarPulse 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
+      .shimmer-text { animation: textShimmer 4s ease-in-out infinite; }
+      .flow-line {
+        stroke-dasharray: 80 120;
+        animation: streamLine 8s linear infinite;
+      }
+      .font-mono {
+        font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      }
+      .font-sans {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="2" y="2" width="846" height="216" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Animated Ambient Accent Flow Line -->
+  <path d="M 16 2 L 834 2" stroke="url(#borderGrad)" stroke-width="2.5" stroke-linecap="round" class="flow-line" filter="url(#glow)" />
+
+  <!-- Window Control Dots (macOS Style) -->
+  <circle cx="32" cy="30" r="5" fill="#ef4444" opacity="0.85" />
+  <circle cx="48" cy="30" r="5" fill="#f59e0b" opacity="0.85" />
+  <circle cx="64" cy="30" r="5" fill="#10b981" opacity="0.85" />
+
+  <!-- Status Capsule Badge -->
+  <g transform="translate(610, 18)">
+    <rect width="206" height="26" rx="13" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <!-- Radar Live Ring -->
+    <circle cx="16" cy="13" r="4" fill="none" stroke="#22c55e" stroke-width="1.5" class="radar-ring" />
+    <circle cx="16" cy="13" r="4" fill="#22c55e" />
+    <text x="30" y="17" fill="#cbd5e1" font-size="10" font-weight="600" class="font-mono" letter-spacing="0.5">OPEN TO OPPORTUNITIES</text>
+  </g>
+
+  <!-- Tech Grid Constellation Dots -->
+  <g class="particle-1">
+    <circle cx="780" cy="90" r="1.5" fill="#38bdf8" />
+    <circle cx="730" cy="140" r="2" fill="#818cf8" />
+    <circle cx="580" cy="180" r="1.5" fill="#2dd4bf" />
+  </g>
+  <g class="particle-2">
+    <circle cx="120" cy="170" r="2" fill="#38bdf8" />
+    <circle cx="280" cy="190" r="1.5" fill="#818cf8" />
+    <circle cx="670" cy="110" r="2.5" fill="#38bdf8" />
+  </g>
+  <g class="particle-3">
+    <circle cx="810" cy="160" r="2" fill="#2dd4bf" />
+    <circle cx="450" cy="185" r="1.5" fill="#38bdf8" />
+  </g>
+
+  <!-- Sub-label / Tagline Header -->
+  <text x="32" y="78" fill="#38bdf8" font-size="12" font-weight="600" class="font-mono" letter-spacing="1.5">
+    SYSTEM.INIT &gt; FULL-STACK ENGINEERING
+  </text>
+
+  <!-- Main Headline / Identity -->
+  <text x="32" y="122" fill="url(#textGrad)" font-size="34" font-weight="800" class="font-sans shimmer-text" letter-spacing="-0.5">
+    Ranu N. / @rnuranu
+  </text>
+
+  <!-- Description / Core Specialization -->
+  <text x="32" y="152" fill="#94a3b8" font-size="14" font-weight="400" class="font-sans">
+    Crafting high-resilience web architectures, seamless client experiences &amp; automated deployments.
+  </text>
+
+  <!-- Tech Pills / Focus Chips -->
+  <g transform="translate(32, 172)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="76" height="24" rx="6" fill="url(#tagGrad)" stroke="#334155" stroke-width="1" />
+    <text x="38" y="16" fill="#e2e8f0" font-size="11" font-weight="600" class="font-mono" text-anchor="middle">Next.js</text>
+
+    <!-- Pill 2 -->
+    <rect x="84" y="0" width="94" height="24" rx="6" fill="url(#tagGrad)" stroke="#334155" stroke-width="1" />
+    <text x="131" y="16" fill="#e2e8f0" font-size="11" font-weight="600" class="font-mono" text-anchor="middle">TypeScript</text>
+
+    <!-- Pill 3 -->
+    <rect x="186" y="0" width="80" height="24" rx="6" fill="url(#tagGrad)" stroke="#334155" stroke-width="1" />
+    <text x="226" y="16" fill="#e2e8f0" font-size="11" font-weight="600" class="font-mono" text-anchor="middle">React</text>
+
+    <!-- Pill 4 -->
+    <rect x="274" y="0" width="88" height="24" rx="6" fill="url(#tagGrad)" stroke="#334155" stroke-width="1" />
+    <text x="318" y="16" fill="#e2e8f0" font-size="11" font-weight="600" class="font-mono" text-anchor="middle">Node/PHP</text>
+
+    <!-- Pill 5 -->
+    <rect x="370" y="0" width="100" height="24" rx="6" fill="url(#tagGrad)" stroke="#334155" stroke-width="1" />
+    <text x="420" y="16" fill="#e2e8f0" font-size="11" font-weight="600" class="font-mono" text-anchor="middle">CI/CD Sync</text>
+  </g>
+
+  <!-- Terminal Indicator / Corner Accent -->
+  <g transform="translate(740, 168)">
+    <text x="0" y="18" fill="#475569" font-size="11" font-weight="600" class="font-mono">v2.4.0 • 2026</text>
+  </g>
+</svg>

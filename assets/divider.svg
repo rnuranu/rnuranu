@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 16" width="100%" height="16" fill="none">
+  <defs>
+    <linearGradient id="divBase" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="15%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.7" />
+      <stop offset="85%" stop-color="#2dd4bf" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="divGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="1" />
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="divBlur" x="-10%" y="-100%" width="120%" height="300%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+
+    <style>
+      @keyframes travelGlow {
+        0% { transform: translateX(-150px); }
+        100% { transform: translateX(950px); }
+      }
+      .glow-runner {
+        animation: travelGlow 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Static Base Track -->
+  <line x1="10" y1="8" x2="840" y2="8" stroke="url(#divBase)" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Center Diamond Accent -->
+  <polygon points="425,5 428,8 425,11 422,8" fill="#38bdf8" />
+
+  <!-- Animated Traveling Laser Beam -->
+  <g class="glow-runner">
+    <line x1="0" y1="8" x2="120" y2="8" stroke="url(#divGlow)" stroke-width="3" stroke-linecap="round" filter="url(#divBlur)" />
+    <line x1="10" y1="8" x2="110" y2="8" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+</svg>
